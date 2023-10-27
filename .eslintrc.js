@@ -3,7 +3,7 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
-    "extends": ["eslint:recommended","eslint-config-prettier"],
+    "extends": ["eslint:recommended","eslintconfigprettier"],
     "overrides": [
         {
             "env": {
