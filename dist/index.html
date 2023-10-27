@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="index.bundle.js" defer></script>
+  </head>
+
+  <body>
+    <form>
+      <span
+        ><label for="email">Email: </label
+        ><input
+          type="email"
+          name="email"
+          id="email"
+          autocomplete="email" /></span
+      ><span
+        ><label for="country">Country: </label
+        ><input type="text" list="countries" name="country" id="country"
+      /></span>
+      <datalist id="countries"> </datalist>
+      <span
+        ><label for="zip_code">Zip-code: </label
+        ><input type="text" name="zip_code" id="zip_code" /></span
+      ><span
+        ><label for="password">Password: </label
+        ><input
+          type="password"
+          name="password"
+          id="password"
+          autocomplete="new-password" /></span
+      ><span
+        ><label for="password_confirmation">Password Confirmation: </label
+        ><input
+          type="password"
+          name="password"
+          id="password_confirmation"
+          autocomplete="new-password"
+      /></span>
+    </form>
+  </body>
+</html>
