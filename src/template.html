@@ -10,34 +10,35 @@
   <body>
     <form>
       <span
-        ><label for="email">Email: </label
+        ><label for="email">Email* </label
         ><input
           type="email"
           name="email"
           id="email"
-          autocomplete="email" /></span
-      ><span
-        ><label for="country">Country: </label
-        ><input type="text" list="countries" name="country" id="country"
-      /></span>
-      <datalist id="countries"> </datalist>
+          autocomplete="email"
+          required /></span
+      ><span><label for="country">Country* </label></span>
+      <select name="country" id="country"></select>
       <span
-        ><label for="zip_code">Zip-code: </label
-        ><input type="text" name="zip_code" id="zip_code" /></span
+        ><label for="zip_code">Zip-code* </label
+        ><input type="text" name="zip_code" id="zip_code" required /></span
       ><span
-        ><label for="password">Password: </label
+        ><label for="password">Password* </label
         ><input
           type="password"
           name="password"
           id="password"
-          autocomplete="new-password" /></span
+          autocomplete="new-password"
+          pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"
+          required /></span
       ><span
-        ><label for="password_confirmation">Password Confirmation: </label
+        ><label for="password_confirmation">Password Confirmation* </label
         ><input
           type="password"
-          name="password"
+          name="password_confirmation"
           id="password_confirmation"
-          autocomplete="new-password"
+          autocomplete="current-password"
+          required
       /></span>
     </form>
   </body>
