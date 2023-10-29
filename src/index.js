@@ -14,6 +14,9 @@ inputList.forEach((input) => {
   addEventListenersToInput(input, ["blur", "input"], inputObjectList);
 });
 
+var submitButton = document.querySelector("button");
+submitButton.addEventListener("click", handleSubmit);
+
 function addEventListenersToInput(input, events, inputObjectList) {
   var inputObject = inputObjectList.find(
     (inputObject) => inputObject.name === input.name,
@@ -38,9 +41,31 @@ function handleConstraints(e, constraints) {
   });
   displayError(e.target, errorMessage);
 }
+
+function handleSubmit(e) {
+  e.preventDefault();
+  var nextElementSibling = e.target.nextElementSibling;
+  nextElementSibling.textContent = "Unsuccessful";
+  if (checkAllValid()) {
+    nextElementSibling.textContent = "Successful";
+  } else return;
+}
+
+function checkAllValid() {
+  var valid = true;
+  var inputList = document.querySelectorAll("input");
+  inputList.forEach((input) => {
+    let event = new Event("input");
+    input.dispatchEvent(event);
+    if (input.nextElementSibling.textContent !== "") valid = false;
+  });
+  return valid;
+}
+
 function displayError(input, errorMessage) {
   input.nextElementSibling.textContent = errorMessage;
 }
+
 function isValid(inputElement, constraint) {
   if (constraint === "notSamePassword") {
     const password = document.querySelector("#password").value;

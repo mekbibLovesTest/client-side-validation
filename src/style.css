@@ -8,6 +8,10 @@ form > span {
   grid-template-columns: 1fr 200px 1fr;
 }
 
-input, select {
+input,
+select {
   height: 20px;
+}
+button {
+  width: 100px;
 }
