@@ -11,7 +11,7 @@ select.dispatchEvent(changeEvent);
 
 var inputList = document.querySelectorAll("input");
 inputList.forEach((input) => {
-  addEventListenersToInput(input, ["blur", "input"], inputObjectList);
+  addEventListenersToInput(input, ["blur","input"], inputObjectList);
 });
 
 var submitButton = document.querySelector("button");
@@ -39,6 +39,7 @@ function handleConstraints(e, constraints) {
       } else errorMessage = constraints[constraint].errorMessage;
     }
   });
+  e.target.setCustomValidity(errorMessage);
   displayError(e.target, errorMessage);
 }
 
@@ -55,7 +56,7 @@ function checkAllValid() {
   var valid = true;
   var inputList = document.querySelectorAll("input");
   inputList.forEach((input) => {
-    let event = new Event("input");
+    let event = new Event("blur");
     input.dispatchEvent(event);
     if (input.nextElementSibling.textContent !== "") valid = false;
   });

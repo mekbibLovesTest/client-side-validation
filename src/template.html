@@ -17,6 +17,7 @@
           id="email"
           autocomplete="email"
           required
+          placeholder=""
         />
         <span></span> </span
       ><span
@@ -27,7 +28,12 @@
 
       <span
         ><label for="zip_code">Zip-code* </label
-        ><input type="text" name="zip_code" id="zip_code" required />
+        ><input
+          type="text"
+          name="zip_code"
+          id="zip_code"
+          required
+          placeholder="" />
         <span></span></span
       ><span
         ><label for="password">Password* </label
@@ -37,7 +43,8 @@
           id="password"
           autocomplete="new-password"
           pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"
-          required />
+          required
+            placeholder="" />
         <span></span></span
       ><span
         ><label for="password_confirmation">Password Confirmation* </label
@@ -46,7 +53,7 @@
           name="password_confirmation"
           id="password_confirmation"
           autocomplete="current-password"
-          required />
+          required placeholder=""/>
         <span></span
       ></span>
       <button>submit</button>

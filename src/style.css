@@ -7,11 +7,28 @@ form > span {
   grid-auto-flow: column;
   grid-template-columns: 1fr 200px 1fr;
 }
-
+form > span > span {
+  text-align: center;
+}
 input,
 select {
   height: 20px;
 }
 button {
   width: 100px;
+}
+
+input:not(:focus):not(:placeholder-shown):valid {
+  border: 1px solid green;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+  border: 1px solid red;
+}
+select:valid {
+  border: 1px solid green;
+}
+
+#password + span {
+  white-space: pre;
 }

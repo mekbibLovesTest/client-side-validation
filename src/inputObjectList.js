@@ -12,11 +12,7 @@ var zipCodeConstraints = [
 var passwordConstraints = [
   createConstraint(
     "patternMismatch",
-    "password must contain 1 number (0-9) \
-  password must contain 1 uppercase letters \
-  password must contain 1 lowercase letters \
-  password must contain 1 non-alpha numeric number \
-  password is 8-16 characters with no space",
+    "password must contain 1 number (0-9) \npassword must contain 1 uppercase letters \npassword must contain 1 lowercase letters \npassword must contain 1 non-alpha numeric number \npassword is 8-16 characters with no space",
   ),
   createConstraint("valueMissing", "Password is Required"),
 ];
