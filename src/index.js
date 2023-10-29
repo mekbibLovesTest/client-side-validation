@@ -1,6 +1,6 @@
 import { createCountryOptions, getCountryList } from "./countries";
 import inputObjectList from "./inputObjectList";
-
+import "./style.css";
 var select = document.querySelector("select");
 select.append(...createCountryOptions());
 select.addEventListener("change", (e) =>
@@ -36,10 +36,11 @@ function handleConstraints(e, constraints) {
       } else errorMessage = constraints[constraint].errorMessage;
     }
   });
-  e.target.setCustomValidity(errorMessage);
-  e.target.reportValidity();
+  displayError(e.target, errorMessage);
 }
-
+function displayError(input, errorMessage) {
+  input.nextElementSibling.textContent = errorMessage;
+}
 function isValid(inputElement, constraint) {
   if (constraint === "notSamePassword") {
     const password = document.querySelector("#password").value;

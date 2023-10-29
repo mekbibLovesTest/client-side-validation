@@ -1,0 +1,13 @@
+form {
+  display: grid;
+  gap: 20px;
+}
+form > span {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 200px 1fr;
+}
+
+input, select {
+  height: 20px;
+}
